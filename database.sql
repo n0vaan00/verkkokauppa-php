@@ -33,3 +33,19 @@ INSERT INTO tuote VALUES (5,'Jokunen',16,2) ;
 INSERT INTO tuote VALUES (6,'EVVK',31,2) ;
 INSERT INTO tuote VALUES (7,'Tie itte parempi',16,2) ;
 
+/* ASIAKAS */
+
+CREATE TABLE asiakas (
+asiakas_id INTEGER NOT NULL,
+etunimi CHAR(30) NOT NULL,
+sukunimi CHAR(30) NOT NULL,
+osoite CHAR(15) NOT NULL,
+postinro CHAR(5) NOT NULL, 
+postitmp CHAR(10) NOT NULL, 
+puhnum VARCHAR(20),
+rek_pvm DATE
+CONSTRAINT asiakas_pk PRIMARY KEY (asiakas_id),
+CONSTRAINT asiakas_id_un UNIQUE (asiakas_id)
+) ;
+
+INSERT INTO asiakas VALUES (1,'Matti','Manninen','Jokitie 666','90100','Oulu','0401112223', '2021-11-20') ;
