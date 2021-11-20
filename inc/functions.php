@@ -13,9 +13,9 @@ function openDb(): object {
 
 function selectAsJson(object $db,string $sql): void {
     $query = $db->query($sql);
-    $result = $quey->fetchAll(PDO::FETCH_ASSOC);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
     header('HTTP/1.1 200 OK');
-    echo json_encode($results);
+    echo json_encode($result);
 }
 
 function executeInsert(object $db,string $sql): int {
