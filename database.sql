@@ -39,13 +39,15 @@ CREATE TABLE asiakas (
 asiakas_id INTEGER NOT NULL,
 etunimi CHAR(30) NOT NULL,
 sukunimi CHAR(30) NOT NULL,
+kayttajanim CHAR(30) NOT NULL,
+password VARCHAR(50) NOT NULL,
 osoite CHAR(15) NOT NULL,
 postinro CHAR(5) NOT NULL, 
 postitmp CHAR(10) NOT NULL, 
 puhnum VARCHAR(20),
-rek_pvm DATE
+rek_pvm DATE,
 CONSTRAINT asiakas_pk PRIMARY KEY (asiakas_id),
 CONSTRAINT asiakas_id_un UNIQUE (asiakas_id)
 ) ;
 
-INSERT INTO asiakas VALUES (1,'Matti','Manninen','Jokitie 666','90100','Oulu','0401112223', '2021-11-20') ;
+INSERT INTO asiakas VALUES (1,'Matti','Manninen', 'Malli','kansalainen','Jokitie 666','90100','Oulu','0401112223', '2021-11-20') ;
