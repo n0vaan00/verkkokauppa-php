@@ -5,9 +5,8 @@ create database webshop;
 use webshop;
 
 CREATE TABLE tuoteryhma (
-trnro SMALLINT AUTO_INCREMENT,
-trnimi CHAR(30),
-CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
+trnro SMALLINT PRIMARY KEY AUTO_INCREMENT,
+trnimi CHAR(30)
 ) ;
 
 INSERT INTO tuoteryhma VALUES (1,'Pitkähihaiset');
@@ -15,11 +14,10 @@ INSERT INTO tuoteryhma VALUES (2,'T-paidat');
 INSERT INTO tuoteryhma VALUES (3,'Hihattomat');
 
 CREATE TABLE tuote (
-tuotenro INT,
+tuotenro INT PRIMARY KEY AUTO_INCREMENT,
 tuotenimi CHAR(20) NOT NULL,
 hinta DECIMAL(5,2),
 trnro SMALLINT NOT NULL,
-CONSTRAINT tuote_pk PRIMARY KEY (tuotenro),
 CONSTRAINT tuotenimi_un UNIQUE (tuotenimi),
 CONSTRAINT tuote_ryhma_fk FOREIGN KEY (trnro) 
            REFERENCES tuoteryhma (trnro)
