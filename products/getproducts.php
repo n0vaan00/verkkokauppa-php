@@ -4,11 +4,11 @@ require_once '../inc/headers.php';
 
 $uri=parse_url(filter_input(INPUT_SERVER,'PATH_INFO'),PHP_URL_PATH);
 $parameters = explode('/',$uri);
-$category_id= $parameters[1];
+$trnro= $parameters[1];
 
 try {
     $db = openDb();
-    selectAsJson($db,"select * from tuoteryhma where trnro = $category_id");
+    selectAsJson($db,"select * from tuote where trnro = $trnro");
 }
 
 catch (PDOException $pdoex) {
