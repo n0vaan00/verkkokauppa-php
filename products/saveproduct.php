@@ -2,10 +2,10 @@
 require_once '../inc/headers.php';
 require_once '../inc/functions.php';
 
-$input =json_decode(file_get_contents('php://input'));
+$input1 =json_decode(file_get_contents('php://input'));
 $input2 =json_decode(file_get_contents('php://input'));
 $input3 =json_decode(file_get_contents('php://input'));
-$tuotenimi = filter_var($input->tuotenimi,FILTER_SANITIZE_STRING);
+$tuotenimi = filter_var($input1->tuotenimi,FILTER_SANITIZE_STRING);
 $hinta = filter_var($input2->hinta,FILTER_SANITIZE_STRING);
 $trnro = filter_var($input3->trnro,FILTER_SANITIZE_STRING);
 
