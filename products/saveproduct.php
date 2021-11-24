@@ -20,7 +20,7 @@ $trnro = filter_var($input3->trnro,FILTER_SANITIZE_STRING);
     $query->execute();
 
     header('HTTP/1.1 200 OK');
-    $data = array('tuotenro' => $db->lastInsertId(),'tuotenimi' => $tuotenimi,'hinta' => $hinta,'trnro' => $trnro,);
+    $data = array('tuotenro' => $db->lastInsertId(),'tuotenimi' => $tuotenimi,'hinta' => $hinta,'trnro' => $trnro);
     print json_encode($data);
  } catch (PDOException $pdoex) {
     returnError($pdoex);
