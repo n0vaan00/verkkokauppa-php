@@ -14,7 +14,7 @@ INSERT INTO tuoteryhma VALUES (2,'T-paidat');
 INSERT INTO tuoteryhma VALUES (3,'Hihattomat');
 
 CREATE TABLE tuote (
-tuotenro INT PRIMARY KEY AUTO_INCREMENT,
+tuotenro SMALLINT PRIMARY KEY AUTO_INCREMENT,
 tuotenimi CHAR(20) NOT NULL,
 hinta DECIMAL(5,2),
 trnro SMALLINT NOT NULL,
