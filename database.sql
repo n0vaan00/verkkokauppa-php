@@ -17,6 +17,7 @@ CREATE TABLE tuote (
 tuotenro INT PRIMARY KEY AUTO_INCREMENT,
 tuotenimi CHAR(20) NOT NULL,
 hinta DECIMAL(5,2),
+kuva VARCHAR(50),
 trnro SMALLINT NOT NULL,
 CONSTRAINT tuotenimi_un UNIQUE (tuotenimi),
 CONSTRAINT tuote_ryhma_fk FOREIGN KEY (trnro) 
@@ -30,6 +31,11 @@ INSERT INTO tuote VALUES (4,'Kauluspaita',20,1) ;
 INSERT INTO tuote VALUES (5,'Jokunen',16,2) ;
 INSERT INTO tuote VALUES (6,'EVVK',31,2) ;
 INSERT INTO tuote VALUES (7,'Tie itte parempi',16,2) ;
+
+INSERT INTO tuote (tuotenro,tuotenimi,hinta,trnro,image) values ('1','paita1','1','1','placeholder.png')
+INSERT INTO tuote (tuotenro,tuotenimi,hinta,trnro,image) values ('2','paita2','2','2','placeholder.png')
+INSERT INTO tuote (tuotenro,tuotenimi,hinta,trnro,image) values ('3','paita3','3','3','placeholder.png')
+INSERT INTO tuote (tuotenro,tuotenimi,hinta,trnro,image) values ('4','paita4','4','4','placeholder.png')
 
 /* ASIAKAS */
 
