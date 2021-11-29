@@ -1,51 +1,47 @@
 drop database if exists webshop;
-
 create database webshop;
-
 use webshop;
 
-CREATE TABLE tuoteryhma (
-trnro SMALLINT PRIMARY KEY AUTO_INCREMENT,
-trnimi CHAR(30)
-) ;
+create table category (
+	id int primary key auto_increment,
+	name varchar(50) not null
+);
 
-INSERT INTO tuoteryhma VALUES (1,'Pitkähihaiset');
-INSERT INTO tuoteryhma VALUES (2,'T-paidat');
-INSERT INTO tuoteryhma VALUES (3,'Hihattomat');
+insert into category(name) value ('Pitkähihaiset');
+insert into category(name) value ('Lyhythihaiset');
+insert into category(name) value ('Hihattomat');
 
-CREATE TABLE tuote (
-tuotenro SMALLINT PRIMARY KEY AUTO_INCREMENT,
-tuotenimi CHAR(20) NOT NULL,
-hinta DECIMAL(5,2),
-trnro SMALLINT NOT NULL,
-CONSTRAINT tuotenimi_un UNIQUE (tuotenimi),
-CONSTRAINT tuote_ryhma_fk FOREIGN KEY (trnro) 
-           REFERENCES tuoteryhma (trnro)
-) ;
 
-INSERT INTO tuote VALUES (1,'Villapaita',55.00,1) ;
-INSERT INTO tuote VALUES (2,'Akan hakkaaja',28,3) ;
-INSERT INTO tuote VALUES (3,'Vaemo',27,3) ;
-INSERT INTO tuote VALUES (4,'Kauluspaita',20,1) ;
-INSERT INTO tuote VALUES (5,'Jokunen',16,2) ;
-INSERT INTO tuote VALUES (6,'EVVK',31,2) ;
-INSERT INTO tuote VALUES (7,'Tie itte parempi',16,2) ;
+create table product (
+	id int primary key auto_increment,
+	name varchar(100) not null,
+	price decimal(10,2) not null,
+	image varchar(50),
+	info varchar(200),
+	category_id int not null,
+	index category_id(category_id),
+	foreign key (category_id) references category(id)
+     on delete restrict
+);
 
-/* ASIAKAS */
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Villapaita',55.00,"villa.png","Villainen paita sinulle",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Huppari',30,"huppari.jpg","Paita hupulla",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('T-paita',10,"tpaita.png","Paita joka on T",2) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('V-paita',13,"tpaitav.png","Paita joka on V",2) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari',5,"vaimari.jpg","Vaimari on",3) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari hupulla',25,"vaimarih.jpg","Vaimari bad hair daylle",3) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Neule',30,"neule.jpg","Neulottu on",1) ;
 
-CREATE TABLE asiakas (
-asiakas_id INT AUTO_INCREMENT,
-etunimi CHAR(30) NOT NULL,
-sukunimi CHAR(30) NOT NULL,
-kayttajanim CHAR(30) NOT NULL,
+create table customer(
+id int primary key auto_increment,
+firstname CHAR(30) NOT NULL,
+lastname CHAR(30) NOT NULL,
+username CHAR(30) NOT NULL,
 password VARCHAR(50) NOT NULL,
-osoite CHAR(15) NOT NULL,
-postinro CHAR(5) NOT NULL, 
-postitmp CHAR(10) NOT NULL, 
-puhnum VARCHAR(20),
-rek_pvm DATE,
-CONSTRAINT asiakas_pk PRIMARY KEY (asiakas_id),
-CONSTRAINT asiakas_id_un UNIQUE (asiakas_id)
+address CHAR(15) NOT NULL,
+zip CHAR(5) NOT NULL, 
+city CHAR(10) NOT NULL, 
+phone VARCHAR(20)
 ) ;
 
-INSERT INTO asiakas VALUES (1,'Matti','Manninen', 'Malli','kansalainen','Jokitie 666','90100','Oulu','0401112223', '2021-11-20') ;
+INSERT INTO customer (firstname, lastname, username, password, address, zip, city, phone) VALUES ('Erkki','Esimerkki', 'Ekimerkki','salasanani','Jokitie 666','90100','Oulu','0401112223') ;
