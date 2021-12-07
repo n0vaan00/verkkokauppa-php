@@ -45,3 +45,23 @@ phone VARCHAR(20)
 ) ;
 
 INSERT INTO customer (firstname, lastname, username, password, address, zip, city, phone) VALUES ('Erkki','Esimerkki', 'Ekimerkki','salasanani','Jokitie 666','90100','Oulu','0401112223') ;
+
+create table ´order´ (
+	id int primary key auto_increment,
+	order_date timestamp default current_timestamp,
+	customer_id int not null,
+	index customer_id(customer_id),
+	foreign key (customer_id) references customer(id)
+	on delete restrict
+);
+
+create table order_row (
+	order_id int not null,
+	index order_id(order_id),
+	foreign key (order_id) references ´order´(id)
+	on delete restrict,
+	product_id int not null,
+	index product_id(product_id),
+	foreign key (product_id) references product(id)
+	on delete restrict
+);
