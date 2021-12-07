@@ -17,7 +17,7 @@ try{
 
     $db->beginTransaction();
 
-    $sql = "insert into customer (firstname,lastname,address,zip,city) values
+    $sql = "insert into customer (firstname,lastname,address,zip,phone,city) values
     ('" .
         filter_var($fname,FILTER_SANITIZE_STRING) . "','" .
         filter_var($lname,FILTER_SANITIZE_STRING) . "','" .
