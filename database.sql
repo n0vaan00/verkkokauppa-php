@@ -24,13 +24,13 @@ create table product (
      on delete restrict
 );
 
-INSERT INTO product (name, price, image, info, category_id) VALUES ('Villapaita',55.00,"villa.png","Villainen paita sinulle",1) ;
-INSERT INTO product (name, price, image, info, category_id) VALUES ('Huppari',30,"huppari.jpg","Paita hupulla",1) ;
-INSERT INTO product (name, price, image, info, category_id) VALUES ('T-paita',10,"tpaita.png","Paita joka on T",2) ;
-INSERT INTO product (name, price, image, info, category_id) VALUES ('V-paita',13,"tpaitav.png","Paita joka on V",2) ;
-INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari',5,"vaimari.jpg","Vaimari on",3) ;
-INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari hupulla',25,"vaimarih.jpg","Vaimari bad hair daylle",3) ;
-INSERT INTO product (name, price, image, info, category_id) VALUES ('Neule',30,"neule.jpg","Neulottu on",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Villapaita',55.00,"villa.png","Villainen paita juuri sinulle! Tämä todella mukava villapaita tuo kunnollista joulutunnelmaa. Tehty materiaaleista jotka kestävän pesun millä tahansa.",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Huppari',30,"huppari.jpg","Supermukava huppari niille päiville kun tarvitset enemmän vaatetta. Pestään 40-asteisella pesuohjelmalla.",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('T-paita',10,"tpaita.png","Hieno T-paita kesäiseen meininkiin. Pestään 40-asteisella pesuohjelmalla.",2) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('V-paita',13,"tpaitav.png","Mukava V-paita rentoon menoon, tehty meidän omasta puuvillasekoituksestamme joka takaa parhaan mukavuuden. Sopii pestäväksi kaikilla ohjelmilla.",2) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari',5,"vaimari.jpg","Hihaton paita joka antaa käsillesi mukavasti ilmaa ja aurinkoa. Sopii pestäväksi kaikilla ohjelmilla.",3) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari hupulla',25,"vaimarih.jpg","Tämä hihaton paita on kuin tehty pidettäväksi silloin, kun sinulla on bad hair day. Sopii pestäväksi kaikilla ohjelmilla.",3) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Neule',30,"neule.jpg","Erittäin lämpimä neule niihin kylmiin talvipäiviin kun haluat vain juoda kaakaota ja katsoa telkkaria. Voit pestä tämän paidan millä vain ohjelmalla. ",1) ;
 
 create table customer(
 id int primary key auto_increment,
