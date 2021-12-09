@@ -31,6 +31,8 @@ INSERT INTO product (name, price, image, info, category_id) VALUES ('V-paita',13
 INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari',5,"vaimari.jpg","Hihaton paita joka antaa käsillesi mukavasti ilmaa ja aurinkoa. Sopii pestäväksi kaikilla ohjelmilla.",3) ;
 INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari hupulla',25,"vaimarih.jpg","Tämä hihaton paita on kuin tehty pidettäväksi silloin, kun sinulla on bad hair day. Sopii pestäväksi kaikilla ohjelmilla.",3) ;
 INSERT INTO product (name, price, image, info, category_id) VALUES ('Neule',30,"neule.jpg","Erittäin lämpimä neule niihin kylmiin talvipäiviin kun haluat vain juoda kaakaota ja katsoa telkkaria. Voit pestä tämän paidan millä vain ohjelmalla. ",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Kauluspaita',29.99,"kauluspaita.jpg","Tarviiko vetää jotain tyylikkäämpää ylle? Ei hätää! Meiltä löytyy kauluspaidat juhlaan kuin juhlaan. Pestään 30-asteisella pesuohjelmalla. ",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Napapaita',6.99,"napapaita.jpg","Pitkä kuuma kesä? Meiltä saa kesän helteisiin täydelliset napapaidat. Voit pestä tämän paidan millä vain ohjelmalla. ",3) ;
 
 create table customer(
 id int primary key auto_increment,
