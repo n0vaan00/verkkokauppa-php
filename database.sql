@@ -33,6 +33,10 @@ INSERT INTO product (name, price, image, info, category_id) VALUES ('Vaimari hup
 INSERT INTO product (name, price, image, info, category_id) VALUES ('Neule',30,"neule.jpg","Erittäin lämpimä neule niihin kylmiin talvipäiviin kun haluat vain juoda kaakaota ja katsoa telkkaria. Voit pestä tämän paidan millä vain ohjelmalla. ",1) ;
 INSERT INTO product (name, price, image, info, category_id) VALUES ('Kauluspaita',29.99,"kauluspaita.jpg","Tarviiko vetää jotain tyylikkäämpää ylle? Ei hätää! Meiltä löytyy kauluspaidat juhlaan kuin juhlaan. Pestään 30-asteisella pesuohjelmalla. ",1) ;
 INSERT INTO product (name, price, image, info, category_id) VALUES ('Napapaita',6.99,"napapaita.jpg","Pitkä kuuma kesä? Meiltä saa kesän helteisiin täydelliset napapaidat. Voit pestä tämän paidan millä vain ohjelmalla. ",3) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Kesämekko',19.99,"kesamekko.jpg","Kesän suosikkituote kesämekko!. Pestään 30-asteisella pesuohjelmalla. ",3) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Pyjamapaita',15.00,"pyjama.jpg","Tyylikkäimmät kledjut Nukkumatin vierailuja varten. Voit pestä tämän paidan millä vain ohjelmalla. ",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Flanellipaita',39.99,"flanelli.jpg","Onko mehtille meno? Meiltä saat tyylikkäät ja sitäkin lämpimämmät flaanellipaidat. Pestään 30-asteisella pesuohjelmalla. ",1) ;
+INSERT INTO product (name, price, image, info, category_id) VALUES ('Collegepaita',9.99,"college.jpg","Taattua laatua! Collegepaidat ovat tehty meidän omasta puuvillasekoituksestamme joka takaa parhaan mukavuuden. Sopii pestäväksi kaikilla ohjelmilla. ",1) ;
 
 create table customer(
 id int primary key auto_increment,
