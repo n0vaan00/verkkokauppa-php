@@ -71,3 +71,24 @@ create table order_row (
 	foreign key (product_id) references product(id)
 	on delete restrict
 );
+
+/*Rekisteröitymiset haluaa jostai syystä et ne lisätään yksitelle erikseen*/
+
+CREATE TABLE IF NOT EXISTS user (
+            firstname varchar(50) NOT NULL,
+            lastname varchar(50) NOT NULL,
+            username varchar(50) NOT NULL,
+            password varchar(200) NOT NULL,
+            PRIMARY KEY (username)
+            )
+
+CREATE TABLE IF NOT EXISTS contact (
+            username varchar(50) NOT NULL,
+            email varchar(100),
+            phone varchar(20),
+			address varchar(50),
+			zip varchar(20),
+			city varchar(50)
+            )
+
+ALTER TABLE contact ADD FOREIGN KEY (username) REFERENCES user(username);
