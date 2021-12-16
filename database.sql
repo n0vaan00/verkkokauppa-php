@@ -63,17 +63,15 @@ create table customer(
 id int primary key auto_increment,
 firstname CHAR(30) NOT NULL,
 lastname CHAR(30) NOT NULL,
-username CHAR(30) NOT NULL,
-password VARCHAR(50) NOT NULL,
 address CHAR(15) NOT NULL,
 zip CHAR(5) NOT NULL, 
 city CHAR(10) NOT NULL, 
 phone VARCHAR(20)
 ) ;
 
-INSERT INTO customer (firstname, lastname, username, password, address, zip, city, phone) VALUES ('Erkki','Esimerkki', 'Ekimerkki','salasanani','Jokitie 666','90100','Oulu','0401112223') ;
+INSERT INTO customer (firstname, lastname, address, zip, city, phone) VALUES ('Erkki','Esimerkki','Jokitie 666','90100','Oulu','0401112223') ;
 
-create table ´order´ (
+create table `order` (
 	id int primary key auto_increment,
 	order_date timestamp default current_timestamp,
 	customer_id int not null,
@@ -82,16 +80,20 @@ create table ´order´ (
 	on delete restrict
 );
 
+
 create table order_row (
 	order_id int not null,
 	index order_id(order_id),
-	foreign key (order_id) references ´order´(id)
+	foreign key (order_id) references `order`(id)
 	on delete restrict,
 	product_id int not null,
 	index product_id(product_id),
 	foreign key (product_id) references product(id)
 	on delete restrict
 );
+
+
+
 
 /*Rekisteröitymiset haluaa jostai syystä et ne lisätään yksitelle erikseen*/
 
